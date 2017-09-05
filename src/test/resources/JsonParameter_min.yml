@@ -1,0 +1,5 @@
+json-parameter:
+ id: json-parameter-1
+ name: name
+ source: location
+ json-path: jsonpath.jsonpath

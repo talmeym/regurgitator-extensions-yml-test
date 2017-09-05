@@ -1,0 +1,3 @@
+freemarker-builder:
+ value: something.something
+ all-contexts: true

@@ -1,0 +1,8 @@
+json-parameter:
+ id: json-parameter-1
+ name: context:name
+ type: NUMBER
+ merge: LEAVE
+ source: context:location
+ json-path: jsonpath.jsonpath
+ processor: test-value-processor

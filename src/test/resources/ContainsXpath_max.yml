@@ -1,0 +1,3 @@
+contains-xpath:
+ namespaces:
+  this: http://something.com

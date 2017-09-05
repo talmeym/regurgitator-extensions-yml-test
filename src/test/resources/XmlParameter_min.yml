@@ -1,0 +1,6 @@
+xml-parameter:
+ id: xml-parameter-1
+ name: name
+ source: location
+ xpath: xpath/xpath
+ namespaces: prefix1=uri1,prefix2=uri2

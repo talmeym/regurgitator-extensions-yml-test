@@ -1,0 +1,8 @@
+sequence:
+ steps:
+ - create-parameter:
+    name: name
+    value: value
+    processor:
+     xpath-processor:
+      xpath: xpath

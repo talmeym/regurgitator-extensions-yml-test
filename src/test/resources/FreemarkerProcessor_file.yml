@@ -1,0 +1,2 @@
+freemarker-processor:
+ file: classpath:/something.something.file

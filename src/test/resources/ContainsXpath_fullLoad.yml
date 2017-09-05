@@ -1,0 +1,20 @@
+regurgitator-configuration:
+ id: regurgitator-configuration-1
+ steps:
+ - decision:
+    id: decision-1
+    steps:
+    - test-step:
+       id: test-step-1
+    rules:
+    - id: rule-1
+      step: test-step-1
+      conditions:
+      - id: condition-1
+        behaviour:
+         contains-xpath:
+          namespaces:
+           prefix1: url1
+           prefix2: url2
+        source: context:location
+        value: /something/something

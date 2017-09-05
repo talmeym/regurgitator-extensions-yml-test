@@ -1,0 +1,6 @@
+sequence:
+ steps:
+ - xml-parameter:
+    name: name
+    source: source
+    xpath: xpath
