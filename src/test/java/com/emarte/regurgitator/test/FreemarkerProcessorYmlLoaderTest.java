@@ -11,22 +11,22 @@ import org.junit.Test;
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
 
 public class FreemarkerProcessorYmlLoaderTest extends YmlLoaderTest {
-	public FreemarkerProcessorYmlLoaderTest() {
-		super(new FreemarkerProcessorYmlLoader());
-	}
+    public FreemarkerProcessorYmlLoaderTest() {
+        super(new FreemarkerProcessorYmlLoader());
+    }
 
-	@Test
-	public void testYml_value() throws Exception {
-		assertExpectation("classpath:/FreemarkerProcessor_value.yml", "com.emarte.regurgitator.extensions.FreemarkerProcessor:['something something']");
-	}
+    @Test
+    public void testYml_value() throws Exception {
+        assertExpectation("classpath:/FreemarkerProcessor_value.yml", "com.emarte.regurgitator.extensions.FreemarkerProcessor:['something something']");
+    }
 
-	@Test
-	public void testYml_file() throws Exception {
-		assertExpectation("classpath:/FreemarkerProcessor_file.yml", "com.emarte.regurgitator.extensions.FreemarkerProcessor:['something something']");
-	}
+    @Test
+    public void testYml_file() throws Exception {
+        assertExpectation("classpath:/FreemarkerProcessor_file.yml", "com.emarte.regurgitator.extensions.FreemarkerProcessor:['something something']");
+    }
 
-	@Test
-	public void testFullLoad() throws RegurgitatorException {
-		loadFile("classpath:/FreemarkerProcessor_fullLoad.yml");
-	}
+    @Test
+    public void testFullLoad() throws RegurgitatorException {
+        loadFile("classpath:/FreemarkerProcessor_fullLoad.yml");
+    }
 }

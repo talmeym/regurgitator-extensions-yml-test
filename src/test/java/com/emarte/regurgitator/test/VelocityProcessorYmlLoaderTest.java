@@ -11,22 +11,22 @@ import org.junit.Test;
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
 
 public class VelocityProcessorYmlLoaderTest extends YmlLoaderTest {
-	public VelocityProcessorYmlLoaderTest() {
-		super(new VelocityProcessorYmlLoader());
-	}
+    public VelocityProcessorYmlLoaderTest() {
+        super(new VelocityProcessorYmlLoader());
+    }
 
-	@Test
-	public void testYml_value() throws Exception {
-		assertExpectation("classpath:/VelocityProcessor_value.yml", "com.emarte.regurgitator.extensions.VelocityProcessor:['something something']");
-	}
+    @Test
+    public void testYml_value() throws Exception {
+        assertExpectation("classpath:/VelocityProcessor_value.yml", "com.emarte.regurgitator.extensions.VelocityProcessor:['something something']");
+    }
 
-	@Test
-	public void testYml_file() throws Exception {
-		assertExpectation("classpath:/VelocityProcessor_file.yml", "com.emarte.regurgitator.extensions.VelocityProcessor:['something something']");
-	}
+    @Test
+    public void testYml_file() throws Exception {
+        assertExpectation("classpath:/VelocityProcessor_file.yml", "com.emarte.regurgitator.extensions.VelocityProcessor:['something something']");
+    }
 
-	@Test
-	public void testFullLoad() throws RegurgitatorException {
-		loadFile("classpath:/VelocityProcessor_fullLoad.yml");
-	}
+    @Test
+    public void testFullLoad() throws RegurgitatorException {
+        loadFile("classpath:/VelocityProcessor_fullLoad.yml");
+    }
 }

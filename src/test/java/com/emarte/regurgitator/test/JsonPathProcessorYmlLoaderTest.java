@@ -11,17 +11,17 @@ import org.junit.Test;
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
 
 public class JsonPathProcessorYmlLoaderTest extends YmlLoaderTest {
-	public JsonPathProcessorYmlLoaderTest() {
-		super(new JsonPathProcessorYmlLoader());
-	}
+    public JsonPathProcessorYmlLoaderTest() {
+        super(new JsonPathProcessorYmlLoader());
+    }
 
-	@Test
-	public void testMinimumYml() throws Exception {
-		assertExpectation("classpath:/JsonPathProcessor.yml", "com.emarte.regurgitator.extensions.JsonPathProcessor:['something.something']");
-	}
+    @Test
+    public void testMinimumYml() throws Exception {
+        assertExpectation("classpath:/JsonPathProcessor.yml", "com.emarte.regurgitator.extensions.JsonPathProcessor:['something.something']");
+    }
 
-	@Test
-	public void testFullLoad() throws RegurgitatorException {
-		loadFile("classpath:/JsonPathProcessor_fullLoad.yml");
-	}
+    @Test
+    public void testFullLoad() throws RegurgitatorException {
+        loadFile("classpath:/JsonPathProcessor_fullLoad.yml");
+    }
 }
