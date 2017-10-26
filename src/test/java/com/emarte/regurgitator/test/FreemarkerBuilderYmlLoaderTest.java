@@ -26,6 +26,11 @@ public class FreemarkerBuilderYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
+    public void testYml_value() throws Exception {
+        assertExpectation("classpath:/FreemarkerBuilder_value.yml", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'{\"something\":\"${something}\"}'],false]");
+    }
+
+    @Test
     public void testYml_allContexts() throws Exception {
         assertExpectation("classpath:/FreemarkerBuilder_allContexts.yml", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something.something'],true]");
     }

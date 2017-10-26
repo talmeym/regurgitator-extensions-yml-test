@@ -1,0 +1,2 @@
+freemarker-builder:
+ value: '{"something":"${something}"}'
