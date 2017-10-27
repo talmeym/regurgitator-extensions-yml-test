@@ -26,6 +26,11 @@ public class VelocityBuilderYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
+    public void testYml_value() throws Exception {
+        assertExpectation("classpath:/VelocityBuilder_value.yml", "com.emarte.regurgitator.extensions.VelocityBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'<something>${something}</something>'],false]");
+    }
+
+    @Test
     public void testYml_allContexts() throws Exception {
         assertExpectation("classpath:/VelocityBuilder_allContexts.yml", "com.emarte.regurgitator.extensions.VelocityBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something'],true]");
     }
