@@ -31,6 +31,11 @@ public class XmlParameterYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
+    public void testMultipleProcessors() throws Exception {
+        assertExpectation("classpath:/XmlParameter_multipleProcessors.yml", XmlParameter_multipleProcessors);
+    }
+
+    @Test
     public void testFullLoad() throws Exception {
         loadFile("classpath:/XmlParameter_fullLoad.yml");
     }
