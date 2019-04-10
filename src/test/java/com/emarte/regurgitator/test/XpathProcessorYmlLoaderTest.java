@@ -4,11 +4,12 @@
  */
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.extensions.XpathProcessorYmlLoader;
 import org.junit.Test;
 
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.XpathProcessor_max;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.XpathProcessor_min;
 
 public class XpathProcessorYmlLoaderTest extends YmlLoaderTest {
     public XpathProcessorYmlLoaderTest() {
@@ -16,17 +17,17 @@ public class XpathProcessorYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
-    public void testYml() throws Exception {
-        assertExpectation("classpath:/XpathProcessor.yml", "com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix2=uri2, prefix1=uri1}]");
+    public void testMinimum() throws Exception {
+        assertExpectation("classpath:/XpathProcessor_min.yml", XpathProcessor_min);
     }
 
     @Test
-    public void testMinimumYml() throws Exception {
-        assertExpectation("classpath:/XpathProcessor_min.yml", "com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix2=uri2, prefix1=uri1}]");
+    public void testMaximum() throws Exception {
+        assertExpectation("classpath:/XpathProcessor_max.yml", XpathProcessor_max);
     }
 
     @Test
-    public void testFullLoad() throws RegurgitatorException {
+    public void testFullLoad() throws Exception {
         loadFile("classpath:/XpathProcessor_fullLoad.yml");
     }
 }

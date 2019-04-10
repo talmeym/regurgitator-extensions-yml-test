@@ -1,8 +1,10 @@
 sequence:
+ id: regurgitator-configuration-1
  steps:
  - create-parameter:
+    id: create-param-1
     name: name
-    value: value
+    source: context:location
     processor:
      json-path-processor:
-      json-path: something.something
+      json-path: $.something.something

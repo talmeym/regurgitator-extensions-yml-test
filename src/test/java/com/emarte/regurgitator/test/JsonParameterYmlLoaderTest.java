@@ -11,6 +11,7 @@ import org.junit.Test;
 import java.io.IOException;
 
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;
 
 public class JsonParameterYmlLoaderTest extends YmlLoaderTest {
     public JsonParameterYmlLoaderTest() {
@@ -18,22 +19,22 @@ public class JsonParameterYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
-    public void testMin() throws IOException, RegurgitatorException {
-        assertExpectation("classpath:/JsonParameter_min.yml", "com.emarte.regurgitator.extensions.JsonParameter:['json-parameter-1',com.emarte.regurgitator.core.ParameterPrototype:['name',com.emarte.regurgitator.core.StringType:[],com.emarte.regurgitator.core.ConflictPolicy:REPLACE],'parameters',com.emarte.regurgitator.core.ValueSource:[com.emarte.regurgitator.core.ContextLocation:['location'],null],com.emarte.regurgitator.extensions.JsonPathProcessor:['jsonpath.jsonpath'],null]");
+    public void testMinimum() throws IOException, RegurgitatorException {
+        assertExpectation("classpath:/JsonParameter_min.yml", JsonParameter_min);
     }
 
     @Test
-    public void testMax() throws IOException, RegurgitatorException {
-        assertExpectation("classpath:/JsonParameter_max.yml", "com.emarte.regurgitator.extensions.JsonParameter:['json-parameter-1',com.emarte.regurgitator.core.ParameterPrototype:['name',com.emarte.regurgitator.core.NumberType:[],com.emarte.regurgitator.core.ConflictPolicy:LEAVE],'context',com.emarte.regurgitator.core.ValueSource:[com.emarte.regurgitator.core.ContextLocation:['context:location'],null],com.emarte.regurgitator.extensions.JsonPathProcessor:['jsonpath.jsonpath'],com.emarte.regurgitator.test.stuff.TestValueProcessor:[]]");
+    public void testMaximum() throws IOException, RegurgitatorException {
+        assertExpectation("classpath:/JsonParameter_max.yml", JsonParameter_max);
     }
 
     @Test
-    public void testMaxFlat() throws IOException, RegurgitatorException {
-        assertExpectation("classpath:/JsonParameter_maxFlat.yml", "com.emarte.regurgitator.extensions.JsonParameter:['json-parameter-1',com.emarte.regurgitator.core.ParameterPrototype:['name',com.emarte.regurgitator.core.NumberType:[],com.emarte.regurgitator.core.ConflictPolicy:LEAVE],'context',com.emarte.regurgitator.core.ValueSource:[com.emarte.regurgitator.core.ContextLocation:['context:location'],null],com.emarte.regurgitator.extensions.JsonPathProcessor:['jsonpath.jsonpath'],com.emarte.regurgitator.test.stuff.TestValueProcessor:[]]");
+    public void testMaximumFlat() throws IOException, RegurgitatorException {
+        assertExpectation("classpath:/JsonParameter_maxFlat.yml", JsonParameter_maxFlat);
     }
 
     @Test
-    public void testFullLoad() throws IOException, RegurgitatorException {
+    public void testFullLoad() throws Exception {
         loadFile("classpath:/JsonParameter_fullLoad.yml");
     }
 }

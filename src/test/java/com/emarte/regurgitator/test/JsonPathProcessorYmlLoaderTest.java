@@ -4,11 +4,11 @@
  */
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.extensions.JsonPathProcessorYmlLoader;
 import org.junit.Test;
 
-import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.JsonPathProcessor;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.JsonPathProcessor_fullLoad;
 
 public class JsonPathProcessorYmlLoaderTest extends YmlLoaderTest {
     public JsonPathProcessorYmlLoaderTest() {
@@ -16,12 +16,12 @@ public class JsonPathProcessorYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
-    public void testMinimumYml() throws Exception {
-        assertExpectation("classpath:/JsonPathProcessor.yml", "com.emarte.regurgitator.extensions.JsonPathProcessor:['something.something']");
+    public void testThis() throws Exception {
+        assertExpectation("classpath:/JsonPathProcessor.yml", JsonPathProcessor);
     }
 
     @Test
-    public void testFullLoad() throws RegurgitatorException {
-        loadFile("classpath:/JsonPathProcessor_fullLoad.yml");
+    public void testFullLoad() throws Exception {
+        assertExpectationFullLoad("classpath:/JsonPathProcessor_fullLoad.yml", JsonPathProcessor_fullLoad);
     }
 }

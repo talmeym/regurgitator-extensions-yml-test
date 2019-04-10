@@ -1,2 +1,2 @@
 velocity-builder:
- value: <something>${something}</something>
+ value: "{\"something\":\"${something}\"}"

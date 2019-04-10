@@ -4,5 +4,4 @@ xml-parameter:
  source: location
  xpath: xpath/xpath
  namespaces: prefix1=uri1,prefix2=uri2
- processor:
-  test-value-processor:
+ processor: test-value-processor

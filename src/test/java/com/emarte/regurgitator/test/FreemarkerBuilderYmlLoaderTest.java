@@ -4,11 +4,11 @@
  */
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.extensions.FreemarkerBuilderYmlLoader;
 import org.junit.Test;
 
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;
 
 public class FreemarkerBuilderYmlLoaderTest extends YmlLoaderTest {
     public FreemarkerBuilderYmlLoaderTest() {
@@ -16,27 +16,27 @@ public class FreemarkerBuilderYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
-    public void testYml_file() throws Exception {
-        assertExpectation("classpath:/FreemarkerBuilder_file.yml", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something'],false]");
+    public void testValue() throws Exception {
+        assertExpectation("classpath:/FreemarkerBuilder_value.yml", FreemarkerBuilder_value);
     }
 
     @Test
-    public void testYml_source() throws Exception {
-        assertExpectation("classpath:/FreemarkerBuilder_source.yml", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[com.emarte.regurgitator.core.ContextLocation:['context:location'],null],false]");
+    public void testFile() throws Exception {
+        assertExpectation("classpath:/FreemarkerBuilder_file.yml", FreemarkerBuilder_file);
     }
 
     @Test
-    public void testYml_value() throws Exception {
-        assertExpectation("classpath:/FreemarkerBuilder_value.yml", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'{\"something\":\"${something}\"}'],false]");
+    public void testSource() throws Exception {
+        assertExpectation("classpath:/FreemarkerBuilder_source.yml", FreemarkerBuilder_source);
     }
 
     @Test
-    public void testYml_allContexts() throws Exception {
-        assertExpectation("classpath:/FreemarkerBuilder_allContexts.yml", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something.something'],true]");
+    public void testAllContexts() throws Exception {
+        assertExpectation("classpath:/FreemarkerBuilder_allContexts.yml", FreemarkerBuilder_allContexts);
     }
 
     @Test
-    public void testFullLoadYml() throws RegurgitatorException {
+    public void testFullLoad() throws Exception {
         loadFile("classpath:/FreemarkerBuilder_fullLoad.yml");
     }
 }

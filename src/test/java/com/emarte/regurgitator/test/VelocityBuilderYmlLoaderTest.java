@@ -4,11 +4,11 @@
  */
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.extensions.VelocityBuilderYmlLoader;
 import org.junit.Test;
 
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;
 
 public class VelocityBuilderYmlLoaderTest extends YmlLoaderTest {
     public VelocityBuilderYmlLoaderTest() {
@@ -16,27 +16,27 @@ public class VelocityBuilderYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
-    public void testYml_file() throws Exception {
-        assertExpectation("classpath:/VelocityBuilder_file.yml", "com.emarte.regurgitator.extensions.VelocityBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something'],false]");
+    public void testValue() throws Exception {
+        assertExpectation("classpath:/VelocityBuilder_value.yml", VelocityBuilder_value);
     }
 
     @Test
-    public void testYml_source() throws Exception {
-        assertExpectation("classpath:/VelocityBuilder_source.yml", "com.emarte.regurgitator.extensions.VelocityBuilder:[com.emarte.regurgitator.core.ValueSource:[com.emarte.regurgitator.core.ContextLocation:['context:location'],null],false]");
+    public void testFile() throws Exception {
+        assertExpectation("classpath:/VelocityBuilder_file.yml", VelocityBuilder_file);
     }
 
     @Test
-    public void testYml_value() throws Exception {
-        assertExpectation("classpath:/VelocityBuilder_value.yml", "com.emarte.regurgitator.extensions.VelocityBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'<something>${something}</something>'],false]");
+    public void testSource() throws Exception {
+        assertExpectation("classpath:/VelocityBuilder_source.yml", VelocityBuilder_source);
     }
 
     @Test
-    public void testYml_allContexts() throws Exception {
-        assertExpectation("classpath:/VelocityBuilder_allContexts.yml", "com.emarte.regurgitator.extensions.VelocityBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something'],true]");
+    public void testAllContexts() throws Exception {
+        assertExpectation("classpath:/VelocityBuilder_allContexts.yml", VelocityBuilder_allContexts);
     }
 
     @Test
-    public void testFullLoadYml() throws RegurgitatorException {
+    public void testFullLoad() throws Exception {
         loadFile("classpath:/VelocityBuilder_fullLoad.yml");
     }
 }

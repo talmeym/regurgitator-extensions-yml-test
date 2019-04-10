@@ -4,11 +4,11 @@
  */
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.extensions.XmlParameterYmlLoader;
 import org.junit.Test;
 
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;
 
 public class XmlParameterYmlLoaderTest extends YmlLoaderTest {
     public XmlParameterYmlLoaderTest() {
@@ -16,22 +16,22 @@ public class XmlParameterYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
-    public void testYml() throws Exception {
-        assertExpectation("classpath:/XmlParameter_min.yml", "com.emarte.regurgitator.extensions.XmlParameter:['xml-parameter-1',com.emarte.regurgitator.core.ParameterPrototype:['name',com.emarte.regurgitator.core.StringType:[],com.emarte.regurgitator.core.ConflictPolicy:REPLACE],'parameters',com.emarte.regurgitator.core.ValueSource:[com.emarte.regurgitator.core.ContextLocation:['location'],null],com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix2=uri2, prefix1=uri1}],null]");
+    public void testMinimum() throws Exception {
+        assertExpectation("classpath:/XmlParameter_min.yml", XmlParameter_min);
     }
 
     @Test
-    public void testMaximumYml() throws Exception {
-        assertExpectation("classpath:/XmlParameter_max.yml", "com.emarte.regurgitator.extensions.XmlParameter:['xml-parameter-1',com.emarte.regurgitator.core.ParameterPrototype:['name',com.emarte.regurgitator.core.StringType:[],com.emarte.regurgitator.core.ConflictPolicy:REPLACE],'parameters',com.emarte.regurgitator.core.ValueSource:[com.emarte.regurgitator.core.ContextLocation:['location'],null],com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix2=uri2, prefix1=uri1}],com.emarte.regurgitator.test.stuff.TestValueProcessor:[]]");
+    public void testMaximum() throws Exception {
+        assertExpectation("classpath:/XmlParameter_max.yml", XmlParameter_max);
     }
 
     @Test
-    public void testMaximumFlatYml() throws Exception {
-        assertExpectation("classpath:/XmlParameter_maxFlat.yml", "com.emarte.regurgitator.extensions.XmlParameter:['xml-parameter-1',com.emarte.regurgitator.core.ParameterPrototype:['name',com.emarte.regurgitator.core.StringType:[],com.emarte.regurgitator.core.ConflictPolicy:REPLACE],'parameters',com.emarte.regurgitator.core.ValueSource:[com.emarte.regurgitator.core.ContextLocation:['location'],null],com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix2=uri2, prefix1=uri1}],com.emarte.regurgitator.test.stuff.TestValueProcessor:[]]");
+    public void testMaximumFlat() throws Exception {
+        assertExpectation("classpath:/XmlParameter_maxFlat.yml", XmlParameter_maxFlat);
     }
 
     @Test
-    public void testFullLoad() throws RegurgitatorException {
+    public void testFullLoad() throws Exception {
         loadFile("classpath:/XmlParameter_fullLoad.yml");
     }
 }
