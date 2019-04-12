@@ -36,6 +36,11 @@ public class XmlParameterYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
+    public void testMultipleProcessorsFlat() throws Exception {
+        assertExpectation("classpath:/XmlParameter_multipleProcessorsFlat.yml", XmlParameter_multipleProcessorsFlat);
+    }
+
+    @Test
     public void testFullLoad() throws Exception {
         loadFile("classpath:/XmlParameter_fullLoad.yml");
     }

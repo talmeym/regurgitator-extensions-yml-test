@@ -39,6 +39,11 @@ public class JsonParameterYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
+    public void testMultipleProcessorsFlat() throws Exception {
+        assertExpectation("classpath:/JsonParameter_multipleProcessorsFlat.yml", JsonParameter_multipleProcessorsFlat);
+    }
+
+    @Test
     public void testFullLoad() throws Exception {
         loadFile("classpath:/JsonParameter_fullLoad.yml");
     }

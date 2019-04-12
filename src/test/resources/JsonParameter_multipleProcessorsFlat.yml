@@ -5,6 +5,4 @@ json-parameter:
   merge: LEAVE
   source: context:location
   json-path: jsonpath.jsonpath
-  processors:
-    - test-value-processor:
-    - test-value-processor:
+  processors: test-value-processor,test-value-processor

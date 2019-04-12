@@ -6,6 +6,4 @@ xml-parameter:
   namespaces:
     prefix1: uri1
     prefix2: uri2
-  processors:
-    - test-value-processor:
-    - test-value-processor:
+  processors: test-value-processor,test-value-processor
