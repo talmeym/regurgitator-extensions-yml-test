@@ -1,0 +1,9 @@
+sequence:
+ id: regurgitator-configuration-1
+ steps:
+ - create-parameter:
+    id: create-param-1
+    name: name
+    source: context:location
+    processor:
+     json-print-processor:
