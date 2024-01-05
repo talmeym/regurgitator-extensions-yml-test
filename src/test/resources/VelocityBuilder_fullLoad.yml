@@ -1,7 +1,0 @@
-sequence:
- steps:
- - build-parameter:
-    name: name
-    builder:
-     velocity-builder:
-      value: value

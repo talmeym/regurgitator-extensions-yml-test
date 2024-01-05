@@ -1,9 +1,0 @@
-sequence:
- steps:
- - create-parameter:
-    id: create-param-1
-    name: toTest1
-    source: context:location
-    processor:
-     velocity-processor:
-      value: something something

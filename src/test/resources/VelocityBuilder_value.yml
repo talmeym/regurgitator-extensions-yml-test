@@ -1,2 +1,0 @@
-velocity-builder:
- value: "{\"something\":\"${something}\"}"
