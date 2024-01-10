@@ -2,12 +2,12 @@
  * Copyright (C) 2017 Miles Talmey.
  * Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
  */
-package com.emarte.regurgitator.test;
+package uk.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.extensions.ContainsXpathYmlLoader;
 import org.junit.Test;
+import uk.emarte.regurgitator.extensions.ContainsXpathYmlLoader;
 
-import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;
+import static uk.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;
 
 public class ContainsXpathYmlLoaderTest extends YmlLoaderTest {
     public ContainsXpathYmlLoaderTest() {
