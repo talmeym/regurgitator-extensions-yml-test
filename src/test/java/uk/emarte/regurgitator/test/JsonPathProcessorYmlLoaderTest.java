@@ -16,7 +16,7 @@ public class JsonPathProcessorYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
-    public void testThis() throws Exception {
+    public void testLoader() throws Exception {
         assertExpectation("classpath:/JsonPathProcessor.yml", JsonPathProcessor);
     }
 
