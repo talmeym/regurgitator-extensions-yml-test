@@ -16,21 +16,21 @@ public class ContainsXpathYmlLoaderTest extends YmlLoaderTest {
 
     @Test
     public void testMinimum() throws Exception {
-        assertExpectation("classpath:/ContainsXpath_min.yml", ContainsXpath_min);
+        assertExpectation("classpath:/ContainsXpath_min.yml", ContainsXpathBehaviour_min);
     }
 
     @Test
     public void testMaximum() throws Exception {
-        assertExpectation("classpath:/ContainsXpath_max.yml", ContainsXpath_max);
+        assertExpectation("classpath:/ContainsXpath_max.yml", ContainsXpathBehaviour_max);
     }
 
     @Test
     public void testFullLoad() throws Exception {
-        assertExpectationFullLoad("classpath:/ContainsXpath_fullLoad.yml", ContainsXpath_fullLoad);
+        assertExpectationFullLoad("classpath:/ContainsXpath_fullLoad.yml", ContainsXpathBehaviour_fullLoad);
     }
 
     @Test
     public void testFullLoad_entityLookup() throws Exception {
-        assertExpectationFullLoad("classpath:/ContainsXpath_fullLoad_entityLookup.yml", ContainsXpath_fullLoad_entityLookup);
+        assertExpectationFullLoad("classpath:/ContainsXpath_fullLoad_entityLookup.yml", ContainsXpathBehaviour_fullLoad_entityLookup);
     }
 }

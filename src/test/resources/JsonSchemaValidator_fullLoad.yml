@@ -1,0 +1,8 @@
+ sequence:
+  steps:
+  - create-parameter:
+     name: create-parameter-1
+     value: value
+     processor:
+      json-schema-validator:
+       file: classpath:/something.something.file
