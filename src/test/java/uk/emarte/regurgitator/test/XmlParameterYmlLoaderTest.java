@@ -21,6 +21,11 @@ public class XmlParameterYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
+    public void testMinimumOptional() throws Exception {
+        assertExpectation("classpath:/XmlParameter_min_optional.yml", XmlParameter_min_optional);
+    }
+
+    @Test
     public void testMaximum() throws Exception {
         assertExpectation("classpath:/XmlParameter_max.yml", XmlParameter_max);
     }
