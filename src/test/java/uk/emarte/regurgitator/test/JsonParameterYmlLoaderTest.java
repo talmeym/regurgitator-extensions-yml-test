@@ -24,6 +24,11 @@ public class JsonParameterYmlLoaderTest extends YmlLoaderTest {
     }
 
     @Test
+    public void testMinimumOptional() throws IOException, RegurgitatorException {
+        assertExpectation("classpath:/JsonParameter_min_optional.yml", JsonParameter_min_optional);
+    }
+
+    @Test
     public void testMaximum() throws IOException, RegurgitatorException {
         assertExpectation("classpath:/JsonParameter_max.yml", JsonParameter_max);
     }
